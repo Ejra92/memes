@@ -1,0 +1,130 @@
+body
+{
+  background-image: url(https://ih1.redbubble.net/image.461304343.6426/pp,550x550.u3.jpg);
+  background-repeat:repeat-x;
+  background-size: 670px;
+  background-position: -20px 0;
+}
+
+h1 {
+  display: table;
+  z-index: -100;
+  position:absolute;
+  top: 280px;
+  left: 450px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+}
+
+h1::after{
+  content:"";
+  display:block;
+  height: 3px;
+  background: red;
+  transform: scale(0,1);
+  transition: transform .5s;
+}
+
+h1:hover::after {
+  transform:scale(1,1);
+}
+
+.Imagen {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  background-color: hsla(240, 100%, 50%, .65);
+}
+
+.Imagen:target {
+  display:grid;
+  z-index: 100;
+}
+
+h2
+{
+  position: absolute;
+  display: inline-block;
+  top: 220px;
+  left: 590px;
+  font-size: 3em;
+  z-index: 200;
+}
+
+h2::after {
+  content: "";
+  display:inline-block;
+  width: 60px;
+  height: 60px;
+  background-image: url(https://i.pinimg.com/originals/90/8b/a4/908ba47207d6c4c858cf89aba62fcba7.gif);
+  background-repeat: no-repeat;
+  background-size:60px;
+  vertical-align: bottom;
+}
+
+.cora {
+  --size: 200px;
+  --color: red;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  transform: rotate(45deg);
+  animation: beat .5s infinite alternate ease-in-out;
+}
+
+@keyframes beat {
+  to {
+    transform: rotate(45deg) scale(1.2); 
+  }
+}
+
+.cora::before {
+  content: " ";
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  margin-top: calc(var(--size) * -0.5);
+  border-radius: 50%;
+}
+
+.cora::after {
+  content: "";
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  margin-top: calc(var(--size) * -0.5);
+  margin-left: calc(var(--size)* -0.5);
+  border-radius: 50%;
+}
+
+.last {
+  position: relative;
+  top: 120px;
+  left: -20px;
+  font-size: 2em;
+}
+
+.last::after {
+  content:"";
+  display:block;
+  height: 2px;
+  background: red;
+  transform: scale(0,1);
+  transition: transform .5s;
+}
+
+.last:hover::after
+{
+  transform: scale(1,.5);
+}
